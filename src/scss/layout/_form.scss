@@ -1,0 +1,52 @@
+.form {
+    width: 100%;
+
+    &__heading {
+        color: #fff;
+        font-size: 3.6rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    &__text {
+        color: #FFF;
+        font-size: 1.8rem;
+        text-align: center;
+        display: block;
+        margin-bottom: 1.5rem;
+    }
+
+    .ui-button {
+        width: 100%;
+        font-size: 1.6rem;
+        background-color: $color-important;
+        border: 1px solid darken($color: $color-important, $amount: 10);
+
+        &:enabled {
+
+            &:hover {
+                background-color: darken($color: $color-important, $amount: 10);
+                border: 1px solid darken($color: $color-important, $amount: 15);
+            }
+        }
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .ui-inputgroup {
+        margin-bottom: 0.5rem;
+    }
+
+    .ui-inputgroup-addon {
+        display: flex;
+        align-items: center;
+        padding: 0 1rem !important;
+    }
+
+    .form-error {
+        font-size: 1.3rem;
+    }
+}

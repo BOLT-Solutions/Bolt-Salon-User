@@ -1,0 +1,48 @@
+.MainContainer {
+  border: 1px solid #6AA3FF !important;
+  border-top: 0;
+  padding: 0px !important;
+  background-color: #3A86FF !important;
+  border: 1px solid black;
+  margin-top: 1%;
+}
+
+.ContainerHeader {
+  padding-bottom: 1%;
+  color: #fff !important;
+}
+
+.ContainerHeader .col i {
+  font-style: normal;
+  margin-left: 1%;
+  font-size: 20px;
+}
+
+.indicator {
+  margin-top: 1%;
+}
+
+.ContainerBody {
+  background-color: #fff;
+  padding-top: 20px !important;
+}
+
+
+
+.ContainerFooter {
+  padding-bottom: 2%;
+  color: #fff !important;
+  border-radius: 1px;
+}
+
+.HeaderSection {
+  display: flex;
+  padding: 10px;
+}
+
+.HeaderSection h2 {
+  color: #006993;
+  margin-left: 1%;
+  font-size: 24px;
+  text-shadow: 0 2px 1px #fff;
+}

@@ -1,0 +1,74 @@
+<div class="background">
+  <div class="overlay"></div>
+
+
+  <div class="logo-container">
+    <img class="logo" src="/assets/images/12311111111.png" />
+  </div>
+
+
+
+  <div class="heading " style="z-index:9;padding:20px; border-radius: 15px">
+    <h1>{{chooseBarber}}</h1>
+  </div>
+  <div class="serviceContainer ">
+
+    <ul class="body-wrap flex-container wrap overflow-auto">
+      <li *ngFor="let m of AvailableBarbers" class="coloumn card {{m.styleClasses}}" id="{{m.id}}" (click)="selectBarber(m)">
+        <div>
+
+          <img class="barber-img align-self-center" src="../../../../assets/uploads/{{m.barberProfilePhoto.userPath}}" style="margin-left:0;margin-right:0;margin-top:10%;">
+        </div>
+   
+        <div class="card-body">
+
+          <h5 class="card-title" style="font-size:24px;font-weight:800;" *ngIf="lang=='en'">
+            {{m.nameEN}}
+            <span class="busyDot" *ngIf="m.barberQueue.queueWaitingTime > 0"></span>
+            <span class="availableDot " *ngIf="m.barberQueue.queueWaitingTime == 0"></span>
+          </h5>
+
+          <h5 class="card-title" style="font-size:24px;" *ngIf="lang=='ar'">
+            {{m.nameAR}}
+            <span class="busyDot" *ngIf="m.barberQueue.queueWaitingTime > 0"></span>
+            <span class="availableDot " *ngIf="m.barberQueue.queueWaitingTime == 0"></span>
+          </h5>
+
+          <p *ngIf="lang=='en' && m.barberQueue.queueWaitingTime != 0 " class="card-text " style="font-size:24px;">
+            <span class="busy"> {{m.barberQueue.queueWaitingTimeInHours}}</span> hrs
+            <span class="busy">{{m.barberQueue.queueWaitingTimeInMinutes}}</span> mins | <span class="busy">{{m.status}}</span>
+          </p>
+          <p *ngIf="lang=='en' && m.barberQueue.queueWaitingTime == 0 " class="card-text" style="font-size:24px;">
+            {{m.status}}
+          </p>
+
+          <p *ngIf="lang=='ar' && m.barberQueue.queueWaitingTime != 0 " class="card-text " style="font-size:24px;">
+            <span class="busy">{{m.status}}</span>
+            | <span class="busy"> {{m.barberQueue.queueWaitingTimeInHours}}</span> {{hours}}
+            <span class="busy">{{m.barberQueue.queueWaitingTimeInMinutes}}</span> {{mins}}
+          </p>
+          <p *ngIf="lang=='ar' && m.barberQueue.queueWaitingTime == 0 " class="card-text" style="font-size:24px;">
+            {{m.status}}
+          </p>
+          <!--<p *ngIf="lang=='ar'" class="card-text " [ngClass]="m.barberQueue.queueWaitingTime == 0  ? 'available' : 'busy'" style="font-size:24px;"> {{m.status}} |  {{mins}} {{m.barberQueue.queueWaitingTime}} </p>-->
+
+
+        </div>
+
+
+      </li>
+    </ul>
+
+  </div>
+  <!--[ngClass]="m.barberQueue.queueWaitingTime == 0  ? 'available' : 'busy'"-->
+
+  <div class="row">
+    <div *ngIf="showNext" class="arrow-next">
+      <a (click)="NavigateToServices()"> <img class="" style="width:100%" src="assets/images/arrow1.png" /></a>
+    </div>
+    <div class="arrow-prev">
+      <a routerLink="../../Welcome/userWelcomePage"><img class="" style="width:100%" src="assets/images/arrow2.png" /></a>
+    </div>
+
+  </div>
+</div>

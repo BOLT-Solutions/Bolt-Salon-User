@@ -1,0 +1,43 @@
+<div class="background">
+  <div class="overlay">  </div>
+
+  <div class="row">
+    <div class="logo-container col-8 col-lg-5">
+      <img class="logo" src="/assets/images/12311111111.png" />
+    </div>
+  </div>
+
+  <div id="msform">
+
+    <fieldset>
+      <form [formGroup]="existingCustomerLogin" dir={{dir}}>
+        <div class="form-group">
+          <div class="component">
+            <h2 class="fs-title">{{head1}}</h2>
+            <h3 class="fs-subtitle">{{head2}}</h3>
+            <input type="text" formControlName="phoneNumber" id="PhoneNumber" class="form-control " name="CustomerLoginField" dir={{dir}} placeholder="{{placeholderPhoneNumber}} " (input)="displayFalse($event)"  value={{value}} (focus)="clickinput()"   (focusout)="hideInput()"  >
+
+            <div *ngIf="f.phoneNumber.touched && f.phoneNumber.invalid" class="alert alert-danger">
+              <div *ngIf="f.phoneNumber.errors.required">{{PhoneNumberError}}</div>
+              <div *ngIf="f.phoneNumber.errors.pattern">{{PhoneNumberPatternError}}</div>
+            </div>
+            <span *ngIf="display" class="text-danger" style="font-size:23px;"> {{LoginFailedPopUpText}} </span>
+          </div>
+        </div>
+      </form>
+    </fieldset>
+
+  </div>
+
+  <div class="arrow-next">
+    <a *ngIf="existingCustomerLogin.valid" (click)="customerLogin()"> <img class="" style="width:100%" src="assets/images/arrow1.png" /> </a>
+  </div>
+  <div class="arrow-prev">
+    <a routerLink="../../Welcome/userWelcomePage"> <img class="" style="width:100%" src="assets/images/arrow2.png" /></a>
+  </div>
+
+ 
+    <div id="keyboard"  style="z-index:100" ></div>
+   
+</div>
+

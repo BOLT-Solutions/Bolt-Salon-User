@@ -1,0 +1,79 @@
+
+  <div class="background">
+    <div class="overlay">  </div>
+
+    <div class="row" id="logoShrink">
+
+      <div class="logo-container col-6 col-lg-3">
+        <img class="logo" src="/assets/images/12311111111.png" />
+      </div>
+    </div>
+
+    <div class="row">
+
+
+      <div id="msform" class="col-8">
+
+        <fieldset>
+
+          <form [formGroup]="CustomerRegister" dir={{dir}}>
+            <h2 class="fs-title">{{head1}}</h2>
+            <h3 class="fs-subtitle">{{head2}}</h3>
+            <div class="form-group">
+              <div class="component">
+
+                <input type="email" formControlName="mail" id="t1" class="form-control input" dir={{dir}} placeholder="{{placeholderMail}}" value={{email}} (input)="displayFalse($event)" (focus)="clickinput('name')" (focusout)="hideInput()" >
+                <div *ngIf="f.mail.touched && f.mail.invalid" class="alert alert-danger">
+                  <div *ngIf="f.mail.errors.email">{{MailPatternError}}</div>
+
+                </div>
+                <span *ngIf="display" class="alert alert-danger" style="font-size:23px;"> {{RegisterFailedPopUpText}} </span>
+
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="component">
+
+              <input type="{{passwordType}}" formControlName="password" id="t2" class="form-control input" dir={{dir}} placeholder="{{placeholderpassword}}" value={{password}} (input)="displayFalse($event)" (focus)="clickinput('pwd')" (focusout)="hideInput()" >
+              <i id="p-viewer" class="fa fa-eye " aria-hidden="true" *ngIf="passwordType=='password'" (click)="clickViewPassword(true)"></i>
+              <i id="p-viewer" class="fa fa-eye-slash" aria-hidden="true" *ngIf="passwordType=='text'" (click)="clickhidePassword(false)"></i>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="component">
+              <div *ngIf="loginErrorBoolean" class="alert alert-danger " style="margin-top:3px;">
+                <div>{{loginErrorText}}</div>
+              </div>
+            </div>
+          </div>
+
+
+        </form>
+
+
+        </fieldset>
+      </div>
+
+
+    </div>
+
+
+    <div class="row">
+    <div class="arrow-next">
+      <button class="loginBtn" (click)="loginUser()">
+        <img class="logoImg" src="/assets/login.png" />
+      </button>
+    </div>
+  </div>
+      <!--<div class="arrow-next">
+        <button class="btn btn-primary loginBtn" (click)="loginUser()">Login</button>
+      </div>-->
+    </div>
+    <div id="keyboard" style="z-index:100"></div>
+    <div id="keyboard2" style="z-index:100"></div>
+    
+
+
+  <!--</div>-->
+

@@ -1,0 +1,289 @@
+.background {
+  background: url("/assets/images/choose.jpg") no-repeat 0 0;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.92;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0;
+}
+
+img {
+  z-index: 4;
+  width: 100%;
+}
+
+.logo-container {
+  width: 200px;
+  height: 200px;
+  z-index: 10;
+  position: absolute;
+  left: 30px;
+  top: 20px;
+}
+
+
+.arrow-prev {
+  width: 130px;
+  height: 130px;
+  position: absolute;
+  z-index: 6;
+  bottom: 1%;
+  left: 1%
+}
+
+.heading {
+  color: white;
+  opacity: 0.75;
+  background-color: #000 !important;
+  margin-top: 3.5%;
+  text-align: center !important;
+  width: 800px !important;
+  border-radius: 5px;
+  align-self: center;
+}
+
+.heading h1 {
+  font-size: 6rem;
+}
+
+.component-title {
+  width: auto;
+  height: auto;
+  z-index: 10;
+  position: absolute;
+  color: white;
+  font-size: 24px;
+  margin-top: 13%;
+  margin-left: 40%;
+}
+
+.overlay {
+  position: absolute;
+  background: linear-gradient(#000 -10%, #000 100%);
+  z-index: 2;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  opacity: 0.44;
+}
+
+.barber-img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+}
+
+
+.barber-name {
+  display: block;
+  text-align: center;
+}
+
+li {
+  list-style: none;
+  font-size: 15px;
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.table {
+  border: none;
+  margin-top: 150px;
+  border-collapse: collapse;
+  position: absolute;
+  z-index: 4;
+  max-height: 300px;
+  max-width: 600px;
+  /*margin-left: 200px;*/
+}
+
+
+.coloumn {
+  color: white;
+  background-color: #000;
+  margin: 2%;
+  text-align: center;
+  border-radius: 15%;
+  border: 6px solid transparent;
+  opacity: 0.85;
+  width: 300px;
+  height: 300px;
+  cursor:pointer;
+}
+
+
+.item {
+  position: relative;
+  padding-top: 20px;
+  display: inline-block;
+}
+
+.arrow-next {
+  width: 130px;
+  height: 130px;
+  position: absolute;
+  z-index: 6;
+  bottom: 1%;
+  right: 4%
+}
+.availableDot {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: #1a4301;
+}
+.busyDot {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: #b32107;
+}
+.available {
+  color: #1a4301;
+}
+
+.busy {
+  color: #b32107;
+}
+
+
+
+
+.wrap {
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.flex-item {
+  padding: 5px;
+  width: 300px;
+  height: 100px;
+  margin: 10px;
+  line-height: 100px;
+  color: white;
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+}
+
+.games li {
+  position: absolute;
+  z-index: 6;
+  bottom: 0;
+}
+
+.selected {
+  opacity: 1 !important;
+  border: 6px solid #2f909d !important;
+}
+.selectedBusy {
+  opacity: 1 !important;
+  border: 6px solid #b32107 !important;
+}
+.selectedAvailable {
+  opacity: 1 !important;
+  border: 6px solid #1a4301 !important;
+}
+
+
+.tableRow {
+  width: 29%;
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 6px;
+  border-style: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+.tableRow:focus {
+  box-shadow: none !important;
+  background-color: darkcyan !important;
+}
+
+.tableColoum {
+  text-align: center;
+  color: #FFF;
+  border: none !important;
+}
+
+.tableColoum :active {
+  text-decoration: none;
+}
+
+.table {
+  border-style: none !important;
+  margin-top: 150px;
+  border-collapse: collapse;
+  position: absolute;
+  z-index: 4;
+  max-height: 300px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.barber-img {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  margin-right: 35px;
+  margin-left: 10px;
+}
+
+.barber-name {
+  margin-top: 10px;
+  margin-right: 15px;
+}
+
+
+.serviceContainer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+
+.flex-container {
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+  border: 1px solid silver;
+  display: flex;
+  border: none;
+  border-collapse: collapse;
+  position: absolute;
+  z-index: 4;
+  max-height: 80%;
+  justify-content: center;
+  width: 70%;
+}
+
+.body-wrap::-webkit-scrollbar-track {
+  /*border: 1px solid #000;*/
+  padding: 2px 0;
+  background-color: #404040;
+}
+
+.body-wrap::-webkit-scrollbar {
+  width: 10px;
+}
+
+.body-wrap::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #000;
+ 
+}

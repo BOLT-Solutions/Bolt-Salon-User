@@ -1,0 +1,10 @@
+.custom-dialog {
+    min-width: 50rem; 
+
+    &.ui-dialog {
+
+        .ui-dialog-content {
+            padding: 1.5rem;
+        }
+    }
+}

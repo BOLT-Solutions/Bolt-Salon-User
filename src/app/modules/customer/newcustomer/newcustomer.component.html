@@ -1,0 +1,88 @@
+<div class="background">
+  <div class="overlay">  </div>
+
+  <div class="row" id="logoShrink">
+
+    <div class="logo-container col-6 col-lg-3">
+      <img class="logo" src="/assets/images/12311111111.png" />
+    </div>
+  </div>
+
+  <div class="row">
+
+
+    <div id="msform" class="col-8">
+
+      <fieldset>
+
+        <form [formGroup]="CustomerRegister" dir={{dir}}>
+          <h2 class="fs-title">{{head1}}</h2>
+          <h3 class="fs-subtitle">{{head2}}</h3>
+          <div class="form-group">
+            <div class="component">
+
+              <input type="text" formControlName="name" id="t1" class="form-control input" dir={{dir}}   value={{nameValue}} placeholder="{{placeholderName}}" (input)="displayFalse($event)" (focus)="clickinput('name')"  (focusout)="hideInput()" maxlength="32">
+              <div *ngIf="f.name.touched && f.name.invalid" class="alert alert-danger">
+                <div *ngIf="f.name.errors.required">{{NameError}}</div>
+                <div *ngIf="f.name.errors.pattern">{{NamePatternError}}</div>
+                <div *ngIf="f.name.errors.minlength">{{NameMinLengthPatternError}}</div>
+                <div *ngIf="f.name.errors.maxlength">{{NameMaxLengthPatternError}}</div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="component">
+
+              <input type="text" formControlName="phoneNumber" id="t2" class="form-control input" dir={{dir}} placeholder="{{placeholderPhoneNumber}}" (input)="displayFalse($event)" value={{numberValue}}   (focus)="clickinput('number')" (focusout)="hideInput()"  >
+              <div *ngIf="f.phoneNumber.touched && f.phoneNumber.invalid" class="alert alert-danger">
+                <div *ngIf="f.phoneNumber.errors.required">{{PhoneNumberError}}</div>
+                <div *ngIf="f.phoneNumber.errors.pattern">{{PhoneNumberPatternError}}</div>
+
+              </div>
+
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="component">
+
+              <input type="email" formControlName="mail" id="t3" class="form-control input" dir={{dir}} placeholder="{{placeholderMail}}" (input)="displayFalse($event)" value={{mailValue}} (focus)="clickinput('mail')" (focusout)="hideInput()">
+              <div *ngIf="f.mail.touched && f.mail.invalid" class="alert alert-danger">
+                <div *ngIf="f.mail.errors.email">{{MailPatternError}}</div>
+
+              </div>
+              <span *ngIf="display" class="alert alert-danger" style="font-size:23px;"> {{RegisterFailedPopUpText}} </span>
+
+            </div>
+          </div>
+        </form>
+
+      </fieldset>
+    </div>
+           
+
+  </div>
+  <div id="keyboard1"></div> <!--english keyboard for name-->
+  <div id="keyboard4"></div>  <!--arbic keyboard for name field-->
+  <div id="keyboard2"></div>  <!--numric keyboard--> 
+  <div id="keyboard3"></div>   <!--email keyboard-->
+
+  <div class="row">
+
+    <div *ngIf="CustomerRegister.valid" (click)="AddNewCustomer()" class="arrow-next">
+      <img class="" style="width:100%" src="assets/images/arrow1.png" />
+    </div>
+    <div class="arrow-prev">
+      <a routerLink="../../Welcome/userWelcomePage">
+        <img class="" style="width:100%" src="assets/images/arrow2.png" />
+      </a>
+    </div>
+  </div>
+
+</div>
+
+
+<!--<input type="text" name="email" placeholder="Username" [(ngModel)]="UserName"  />
+  <input type="text" placeholder="Mobile Number" [(ngModel)]="mobileNumber" />-->

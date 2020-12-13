@@ -1,0 +1,29 @@
+.merchant-header {
+    @include custom-shadow;
+    background-color: #fff;
+    font-size: 1.6rem;
+    padding: 0 1.5rem;
+    margin-bottom: 0;
+
+    &__logo {
+        width: 12%;
+    }
+
+    &__menu {
+        span {
+            cursor: pointer;
+        }
+
+        .ui-overlaypanel {
+            right: 1.5rem;
+
+            .ui-overlaypanel-content {
+                padding: 0;
+
+                img {
+                    width: 5rem;
+                }
+            }
+        }
+    }
+}

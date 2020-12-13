@@ -1,0 +1,197 @@
+.background {
+  background: url("/assets/images/loginstart.jpg") no-repeat 0 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.arrow-prev {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  z-index: 6;
+  bottom: 10px;
+  left: 5%
+}
+
+
+.CredentialsForm {
+  position: absolute;
+  border: 1px solid white;
+  border-radius: 5%;
+  width: 40%;
+  height: 70%;
+  margin-top: 10%;
+  margin-left: 10%;
+  background-color: black;
+  z-index: 3;
+  opacity: 0.64;
+}
+
+
+#msform {
+  width: 700px;
+  text-align: center;
+  position: relative;
+  z-index: 9;
+}
+
+#msform fieldset {
+  border: 0 none;
+  border-radius: 3px;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  width: 80%;
+  margin: auto;
+  background: rgb(24, 26, 27, 0.8);
+  border-color: currentcolor;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 15px 1px;
+}
+
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+  display: none;
+}
+/*inputs*/
+#msform input, #msform textarea {
+  padding: 15px;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  outline: none !important;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+/*headings*/
+.fs-title {
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.fs-subtitle {
+  font-weight: normal;
+  font-size: 20px;
+  color: white;
+  margin-bottom: 20px;
+  padding-bottom: 1%;
+}
+
+img {
+  width: 100%;
+}
+
+
+
+.logo-container {
+  margin: 0 auto;
+  z-index: 9;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  background: linear-gradient(#000 -10%, #000 100%);
+  z-index: 1;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  opacity: 0.6;
+}
+
+.arrow-next {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  z-index: 6;
+  bottom: 10px;
+  right: 5%
+}
+
+.langBtnContainer button:active {
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+.alert {
+  width: 100%;
+  font-size: 23px;
+}
+
+
+ 
+
+
+
+
+.swipeUp1 {
+  position: absolute !important;
+  -webkit-animation: sideBarSlide 1s forwards;
+  animation: sideBarSlide 1s forwards;
+  transition:all ease-in-out;
+}
+
+.swipelogo1 {
+  position: absolute !important;
+  -webkit-animation: logoSlide 1s forwards;
+  animation: logoSlide 1s forwards;
+  transition:  all ease-in-out;
+}
+
+@keyframes sideBarSlide {
+
+  /*50% {
+    top: 47%;
+  }*/
+  100% {
+    top: 490px;
+  }
+}
+
+@keyframes logoSlide {
+
+ /*50% {
+    bottom: 47%;
+    /*transform: scale(0.8);
+    transition: 1s all;
+    z-index: 100;*/
+  
+
+  100% {
+    bottom: 50%;
+    transform: scale(0.8);
+    transition: 1s all;
+    z-index: 100;
+  }
+}
+.mat-icon {
+  font-size: 50px;
+}
+.simple-keyboard {
+  max-width: 850px;
+  font-size:30px;
+}
+.hide-keyboard {
+  display:none;
+}

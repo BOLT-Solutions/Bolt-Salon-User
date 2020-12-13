@@ -1,0 +1,89 @@
+
+
+
+  <div class="background">
+    <div class="overlay"></div>
+    <div class="logo-container">
+      <img class="logo" src="/assets/images/12311111111.png" />
+    </div>
+
+    <div class="heading " style="z-index:9;padding:20px; border-radius: 15px">
+      <h1>{{chooseService}}</h1>
+    </div>
+
+
+    <div class="d-flex justify-content-center mt-5">
+      <table dir={{dir}} class="table">
+
+        <thead>
+          <tr>
+            <th class="tableColoum" >
+              <p> {{image}}</p>
+            </th>
+            <th class="tableColoum">
+              <p> {{ServiceName}}</p>
+            </th>
+            <th class="tableColoum">
+              <p> {{price}}</p>
+
+            </th>
+            <th class="tableColoum">
+              <p> {{time}}</p>
+            </th>
+
+
+          </tr>
+        </thead>
+      </table>
+      <table dir={{dir}} class="body-wrap table overflow-auto"style="margin-top:120px">
+
+        <tbody>
+          <tr *ngFor="let service of styleServices"(click)="selectServices(service)" id="{{service.id}}" class="{{service.styleClasses}}">
+            <td class="tableColoum">
+
+              <img src="../../../../assets/uploads/{{service.userPath}}" style="width:50px; height:50px;" />
+
+            </td>
+            <td class="tableColoum">
+              <p *ngIf="lang=='ar'" class="barber-name">
+                {{service.nameAR}}
+              </p>
+              <p *ngIf="lang=='en'" class="barber-name">
+                {{service.nameEN}}
+              </p>
+
+
+            </td>
+            <td class="tableColoum">
+              <p class="barber-name">
+                {{service.price}} {{egp}}
+              </p>
+
+
+            </td>
+            <td class="tableColoum">
+              <p class="barber-name">
+                {{service.serviceTimeInHrs}} {{hours}},
+                {{service.time%60}} {{mins}}
+              </p>
+
+
+            </td>
+
+
+          </tr>
+        </tbody>
+      </table>
+
+
+    </div>
+
+
+    <div *ngIf="showNext" class="arrow-next">
+      <a routerLink="../../Selection/receipt" (click)="createOrderServices()">  <img class="" style="width:100% " src="assets/images/arrow1.png" /></a>
+    </div>
+
+    <div class="arrow-prev">
+      <a routerLink="../BarberSelection"> <img class="" style="width:100%" src="assets/images/arrow2.png" /></a>
+    </div>
+  </div>

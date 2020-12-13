@@ -1,0 +1,256 @@
+<div class="background">
+  <div class="ColorOverlay">  </div>
+
+  <div class="logo-container">
+    <img class="logo" src="/assets/images/12311111111.png" />
+  </div>
+  <table class="body-wrap   " dir='{{dir}}' *ngIf="recieptDiv">
+    <tbody class="overflow-auto table table-responsive">
+      <tr>
+        <td></td>
+        <td class="container" width="600">
+          <div class="content">
+            <table class="main" width="100%" cellpadding="0" cellspacing="0">
+              <tbody>
+                <tr>
+                  <td class="content-wrap aligncenter">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                      <tbody>
+                        <tr>
+                          <td class="content-block">
+                            <h2>{{head1}}</h2>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="content-block" *ngIf="isLoading">
+                            <table class="invoice">
+                              <tbody>
+                                <tr>
+                                  <td class="{{getLanguageBaberName}}">{{customerName}} : {{CurrentCustomer.name}} <br></td>
+                                </tr>
+                                <tr>
+                                  <td class="{{getLanguageBaberName}}">{{head2}} : {{barberName}}</td>
+                                </tr>
+                                <tr>
+                                  <td class="{{getLanguageBaberName}}">{{head3}} {{WaitingTimeInHours}} {{hours}} , {{WaitingTimeInMinutes}} {{mins}}<br></td>
+                                </tr>
+                                <tr>
+                                  <td class="{{getLanguageBaberName}}">{{head5}} {{orderTotalTimeinHrs}} {{hours}} ,  {{orderTotalTime% 60}} {{mins}}<br></td>
+                                </tr>
+
+                                <tr>
+                                  <td>
+                                    <table class="invoice-items" cellpadding="0" cellspacing="0">
+                                      <tbody>
+                                        <tr *ngFor="let orderService of orderServices">
+                                          <td class="{{getLanguageBaberName}}" *ngIf="lang=='en'">{{orderService.nameEN}}</td>
+                                          <td class="{{getLanguageBaberName}}" *ngIf="lang=='ar'">{{orderService.nameAR}}</td>
+                                          <td class="alignright"> {{orderService.price}} {{egp}}</td>
+                                        </tr>
+
+                                        <tr class="total" *ngIf="!isValid">
+                                          <td class="{{getLanguageBaberName}}" width="80%">{{head7}}</td>
+                                          <td> {{orderTotal}} {{egp}}</td>
+                                        </tr>
+
+                                        <tr class="total" *ngIf="isValid">
+                                          <td class="{{getLanguageBaberName}}" width="80%">{{head4}}</td>
+                                          <td> {{orderTotal}} {{egp}}</td>
+                                        </tr>
+
+                                        <tr class="total" *ngIf="isValid">
+                                          <td class="{{getLanguageBaberName}}" width="80%">{{head6}}</td>
+                                          <td *ngIf="isValid"> {{discountRate}} %</td>
+                                          <td *ngIf="!isValid"> {{discountRate}} %</td>
+
+
+                                        </tr>
+                                        <tr class="total" *ngIf="isValid">
+                                          <td class="{{getLanguageBaberName}}" width="80%">{{head7}}</td>
+                                          <td> {{orderTotalAfterDiscount}} {{egp}}</td>
+                                        </tr>
+
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </td>
+        <td></td>
+      </tr>
+    </tbody>
+    <tr class="{{getLanguageBaberName}}">
+      <td style="display:flex;align-items: center;">
+
+        {{head8}}
+        <input value={{promoCode}} style="background-color:transparent;border:1px solid grey;outline-style:none;color:#fff;padding:1px;margin-left:10px;;margin-right:10px" (input)="onInputChange($event)" (focus)=" clickinput()" (focusout)="hideInput()">
+
+        <button class="applyBtn mx-5 p-2" (click)="applyPromoCode()" style="outline-style:none;"><img src="/assets/{{applyBtn}}" /></button>
+
+        <h3 *ngIf="isValid" style="color:forestgreen">{{promoCodeResponse}}</h3>
+        <h3 *ngIf="isValid==false" style="color:red">{{promoCodeError}}</h3>
+
+      </td>
+    </tr>
+  </table>
+
+
+  <div class="confirmationDIv" *ngIf="ConfirmationDiv">
+    <div class="row" style="justify-content:center">
+      <h4 class="{{txtstyle}}  msg" style="margin-top:1%; text-align:center;" *ngIf="IsBarberBusy">{{warnmsg}}  </h4>
+      <p class="{{txtstyle}} msg" style="margin-top:1%; text-align:center;" *ngIf="IsGuest">{{guestmsg}}</p>
+
+    </div>
+
+    <div class="row" style="justify-content:center" *ngIf="reciept">
+      <img class="{{btn}}" src="/assets/{{confirmbtnpath}}" (click)="endPopUp()" />
+    </div>
+  </div>
+</div>
+
+<div class="arrow-next">
+  <!--TODO-->
+  <!--Replace router Link with FinalizeOrder-->
+  <a (click)="finalizeOrder()">
+    <img class="" style="width:100%" src="assets/images/done.png" *ngIf="!reciept && WaitingTime!=0 && lang=='en'" />
+    <img class="" style="width:100%" src="assets/images/done-ar.png" *ngIf="!reciept && WaitingTime!=0 && lang=='ar'" />
+  </a>
+
+  <a (click)="endPopUp()"> <img class="" style="width:100%" src="assets/images/done.png" *ngIf="!reciept && WaitingTime==0&& lang=='en'" /> </a>
+  <a (click)="endPopUp()"> <img class="" style="width:100%" src="assets/images/done-ar.png" *ngIf="!reciept && WaitingTime==0&& lang=='ar'" /> </a>
+
+</div>
+<div class="arrow-prev">
+  <a routerLink="../ServiceSelection"><img class="" style="width:100%" src="assets/images/arrow2.png" /></a>
+</div>
+<div id="keyboard" style="z-index:100"></div>
+
+<!--Printing -->
+<div id="receiptPrint" style="visibility:hidden">
+
+
+  <div id="invoice-POS">
+
+    <div id="top">
+      <div class="logo"><img src="../../../assets/Nlogo.png" style="width:100%" /></div>
+
+      <!--End Info-->
+    </div><!--End InvoiceTop-->
+    <hr />
+
+    <div id="mid">
+      <div class="info">
+        <h2>Receipt</h2>
+        <p>
+          Time : {{currentDate |date:'medium'}}
+        </p>
+
+        <p>
+          Name : {{CurrentCustomer.name}}
+        </p>
+
+        <p>
+          Barber name :{{barberName}}
+        </p>
+
+        <hr />
+        <p>
+          Waiting time :{{WaitingTimeInHours}} {{hours}} , {{WaitingTimeInMinutes}} {{mins}}
+        </p>
+        <p>
+          Total service time :  {{orderTotalTimeinHrs}} {{hours}} ,  {{orderTotalTime% 60}} {{mins}}
+        </p>
+        <hr />
+      </div>
+    </div><!--End Invoice Mid-->
+
+    <div id="bot">
+      <div id="table" style="text-align: center; display:flex; ">
+        <table class="invoice-items">
+          <tr class="tabletitle" style="">
+            <td class="item" style="text-align:left"><h4>Service</h4></td>
+            <td class="Hours" style="text-align:right"><h4>Time</h4></td>
+
+          </tr>
+
+          <tbody style="margin-bottom:10px;">
+            <tr *ngFor="let orderService of orderServices" class="service " style="border:1px solid red;">
+              <td style="text-align:left;">
+                <p class="itemtext">
+                  {{orderService.nameEN}}
+                </p>
+              </td>
+              <td style="text-align:right">
+                <p class="itemtext">
+                  {{orderService.time}} Mins
+                </p>
+              </td>
+            </tr>
+          </tbody>
+          <tr class="service" *ngIf="!isValid">
+            <td style="text-align:left;">
+              <h3 class="itemtext">{{head7}}</h3>
+            </td>
+            <td style="text-align:right;">
+              <h4 class="itemtext">
+                {{orderTotal}} {{egp}}
+              </h4>
+            </td>
+          </tr>
+          <tr class="service" *ngIf="isValid">
+            <td style="text-align:left;">
+              <h3 class="itemtext">{{head4}}</h3>
+            </td>
+            <td style="text-align:right;">
+              <h4 class="itemtext">{{orderTotal}}{{egp}}</h4>
+            </td>
+          </tr>
+          <tr class="service" *ngIf="isValid">
+            <td style="text-align:left;">
+              <h3 class="itemtext"> {{head6}}</h3>
+            </td>
+            <td *ngIf="isValid" style="text-align: right;">
+              <h4 class="itemtext"  >{{discountRate}} %</h4>
+            </td>
+
+          </tr>
+          <tr class="service" *ngIf="isValid">
+            <td style="text-align:left;">
+              <h3 class="itemtext">{{head7}}</h3>
+            </td>
+            <td style="text-align:right;">
+              <h4 class="itemtext"> {{orderTotalAfterDiscount}} {{egp}}</h4>
+            </td>
+          </tr>
+
+
+
+          <!--added-->
+
+
+        </table>
+
+      </div><!--End Table-->
+      <hr />
+      <div id="legalcopy" style="text-align:center">
+        <p>Thank you for your visit</p>
+        <p class="legal">
+          Contact us on :
+          <strong> 01220040331</strong>
+        </p>
+      </div>
+    </div><!--End InvoiceBot-->
+  </div>
+</div>

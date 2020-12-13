@@ -1,0 +1,30 @@
+// import abstracts
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+// import base
+@import 'base/base';
+@import 'base/typography';
+@import 'base/utilities';
+
+// import vendors
+@import 'vendors/bootstrap';
+/*@import 'vendors/primeng';
+@import 'vendors/primeflex';*/
+@import 'vendors/fontawsome'; 
+// import layout
+@import 'layout/header';
+@import 'layout/merchant-header';
+@import 'layout/menu';
+@import 'layout/form';
+
+
+// import components
+@import 'components/auth';
+@import 'components/custom-dialog';
+@import 'components/sharedcontainer' ;
+
+
+// import pages
+
+// import themes
