@@ -5,7 +5,7 @@
   align-content: center;
 }
 .background {
-  background: url("/assets/images/loginstart.jpg") no-repeat 0 0;
+  background: url("/assets/background/LoginBackGround.jpg") no-repeat 0 0;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -19,9 +19,11 @@
   justify-content: space-around;
   align-items: center;
 }
+.Logo {
+  width: 90%;
+}
 
 @media screen and (max-width: 1100px) {
-
 }
 
 .buttons_container {

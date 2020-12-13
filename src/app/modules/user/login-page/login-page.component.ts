@@ -43,7 +43,7 @@ export class LoginPageComponent implements OnInit {
   passwordType: string = "password";
   loginErrorText: string;
   loginErrorBoolean: boolean = false;
-  email: string;
+  email: string ='';
   password: string;
   //
   keyboard_name: Keyboard;

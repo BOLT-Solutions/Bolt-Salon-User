@@ -1,37 +1,37 @@
 
   <div id="back" class="background">
     <div class="overlay"></div>
-    <div class="row">
+    <div class="Logo row">
 
       <div class="logo-container col-8 col-lg-4">
-        <img class="logo" src="/assets/images/12311111111.png" />
+        <img class="logo" src="/assets/logo/LogoBig.png" />
 
       </div>
     </div>
     <div class="Customer" style="position:absolute;top:3%; left:2%;   ">
-      <button class="button" (click)="logout()" style=" width: 230px;"><img src="/assets/images/{{logoutbtnPath}}" /></button>
+      <button class="button" (click)="logout()" style=" width: 230px;"><img src="/assets/images/LogoutBtn.png" /></button>
     </div>
 
-    <a *ngIf="lang == 'en'" class="languageButton" (click)="translateToArabic()" style="right: 2%;     width: 110px;">
-      <img src="/assets/Ar Button.png" />
+    <a *ngIf="lang == 'en'" class="languageButton" (click)="translateToArabic()" style="right: 2%;width: 110px;">
+      <img src="/assets/images/ArChangeBtn.png" />
     </a>
 
-    <a *ngIf="lang == 'ar'" class="languageButton" (click)="translateToEnglish()" style="right: 2%;    width: 110px; ">
-      <img src="/assets/En Button.png" />
+    <a *ngIf="lang == 'ar'" class="languageButton" (click)="translateToEnglish()" style="right: 2%;width: 110px; ">
+      <img src="/assets/images/enChangeBtn.png" />
     </a>
 
 
     <div class="buttons_container">
       <div class="row">
         <div class="Customer col-4">
-          <button class="button" (click)="RouteToPage('Guest')"><img src="/assets/{{guestButtonPath}}" class="{{guestButtonStyle}}" /></button>
+          <button class="button" (click)="RouteToPage('Guest')"><img src="/assets/images/{{guestButtonPath}}" class="{{guestButtonStyle}}" /></button>
         </div>
         <div class="Customer col-4 ">
-          <button class="button" (click)="RouteToPage('ExistingCustomer')">  <img src="/assets/{{existingCustomerButtonPath}}" /></button>
+          <button class="button" (click)="RouteToPage('ExistingCustomer')">  <img src="/assets/images/{{existingCustomerButtonPath}}" /></button>
 
         </div>
         <div class="Customer col-4">
-          <button class="button" (click)="RouteToPage('NewCustomer')"> <img src="/assets/{{newCustomerButtonPath}}" /></button>
+          <button class="button" (click)="RouteToPage('NewCustomer')"> <img src="/assets/images/{{newCustomerButtonPath}}" /></button>
 
         </div>
       </div>
@@ -50,7 +50,7 @@
     </div>
     <div class="content">
       <input type="password" placeholder="{{dialogInputPlaceholder}}" value={{adminPass}} id="t1" (input)="onInputChange($event)" (focus)="clickinput()" (focusout)="hideInput()"/>
-      <button class="button enterPassword" (click)="submitLogout()"><img src="/assets/{{submitImage}}" /></button>
+      <button class="button enterPassword" (click)="submitLogout()"><img src="/assets/images/{{submitImage}}" /></button>
       <div *ngIf="loginErrorBoolean" class="alert alert-danger " style="position:relative;">
         <div style="font-size:20px;text-align:center;">{{loginErrorText}}</div>
       </div>

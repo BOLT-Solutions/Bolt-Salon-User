@@ -2,7 +2,7 @@
   <div class="ColorOverlay">  </div>
 
   <div class="logo-container">
-    <img class="logo" src="/assets/images/12311111111.png" />
+    <img class="logo" src="/assets/logo/LogoBig.png" />
   </div>
   <table class="body-wrap   " dir='{{dir}}' *ngIf="recieptDiv">
     <tbody class="overflow-auto table table-responsive">
@@ -97,7 +97,7 @@
         {{head8}}
         <input value={{promoCode}} style="background-color:transparent;border:1px solid grey;outline-style:none;color:#fff;padding:1px;margin-left:10px;;margin-right:10px" (input)="onInputChange($event)" (focus)=" clickinput()" (focusout)="hideInput()">
 
-        <button class="applyBtn mx-5 p-2" (click)="applyPromoCode()" style="outline-style:none;"><img src="/assets/{{applyBtn}}" /></button>
+        <button class="applyBtn mx-5 p-2" (click)="applyPromoCode()" style="outline-style:none;"><img src="/assets/images/{{applyBtn}}" /></button>
 
         <h3 *ngIf="isValid" style="color:forestgreen">{{promoCodeResponse}}</h3>
         <h3 *ngIf="isValid==false" style="color:red">{{promoCodeError}}</h3>
@@ -115,7 +115,7 @@
     </div>
 
     <div class="row" style="justify-content:center" *ngIf="reciept">
-      <img class="{{btn}}" src="/assets/{{confirmbtnpath}}" (click)="endPopUp()" />
+      <img class="{{btn}}" src="/assets/images/{{confirmbtnpath}}" (click)="endPopUp()" />
     </div>
   </div>
 </div>
@@ -124,12 +124,12 @@
   <!--TODO-->
   <!--Replace router Link with FinalizeOrder-->
   <a (click)="finalizeOrder()">
-    <img class="" style="width:100%" src="assets/images/done.png" *ngIf="!reciept && WaitingTime!=0 && lang=='en'" />
-    <img class="" style="width:100%" src="assets/images/done-ar.png" *ngIf="!reciept && WaitingTime!=0 && lang=='ar'" />
+    <img class="" style="width:100%" src="assets/images/DoneEn.png" *ngIf="!reciept && WaitingTime!=0 && lang=='en'" />
+    <img class="" style="width:100%" src="assets/images/DoneAr.png" *ngIf="!reciept && WaitingTime!=0 && lang=='ar'" />
   </a>
 
-  <a (click)="endPopUp()"> <img class="" style="width:100%" src="assets/images/done.png" *ngIf="!reciept && WaitingTime==0&& lang=='en'" /> </a>
-  <a (click)="endPopUp()"> <img class="" style="width:100%" src="assets/images/done-ar.png" *ngIf="!reciept && WaitingTime==0&& lang=='ar'" /> </a>
+  <a (click)="endPopUp()"> <img class="" style="width:100%" src="assets/images/DoneEn.png" *ngIf="!reciept && WaitingTime==0&& lang=='en'" /> </a>
+  <a (click)="endPopUp()"> <img class="" style="width:100%" src="assets/images/DoneAr.png" *ngIf="!reciept && WaitingTime==0&& lang=='ar'" /> </a>
 
 </div>
 <div class="arrow-prev">
@@ -144,10 +144,10 @@
   <div id="invoice-POS">
 
     <div id="top">
-      <div class="logo"><img src="../../../assets/Nlogo.png" style="width:100%" /></div>
+      <div class="logo"><img src="../../../assets/logo/LogoBig.png" style="width:100%" /></div>
 
-      <!--End Info-->
-    </div><!--End InvoiceTop-->
+      End Info
+    </div>End InvoiceTop
     <hr />
 
     <div id="mid">
@@ -174,7 +174,8 @@
         </p>
         <hr />
       </div>
-    </div><!--End Invoice Mid-->
+    </div>
+    End Invoice Mid
 
     <div id="bot">
       <div id="table" style="text-align: center; display:flex; ">
@@ -237,12 +238,12 @@
 
 
 
-          <!--added-->
+          added
 
 
         </table>
 
-      </div><!--End Table-->
+      </div>End Table
       <hr />
       <div id="legalcopy" style="text-align:center">
         <p>Thank you for your visit</p>
@@ -251,6 +252,6 @@
           <strong> 01220040331</strong>
         </p>
       </div>
-    </div><!--End InvoiceBot-->
+    </div>End InvoiceBot
   </div>
 </div>
