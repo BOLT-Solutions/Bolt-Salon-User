@@ -1,5 +1,5 @@
 .background {
-  background: url("/assets/images/loginstart.jpg") no-repeat 0 0;
+  background: url("/assets/background/ExistingCustomerBackGround.jpg") no-repeat 0 0;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -12,6 +12,11 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+
+.logo
+{
+    width:80%;
 }
 
 .arrow-prev {

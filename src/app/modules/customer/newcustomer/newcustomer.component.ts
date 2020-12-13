@@ -49,9 +49,9 @@ export class NewcustomerComponent implements OnInit {
 
 
   root: any;
-  numberValue: any
-  nameValue: any
-  mailValue: any
+  numberValue: any = null;
+  nameValue: any = null;
+  mailValue: any = null;
   arabic_name =
     {
       default: ["ذ 1 2 3 4 5 6 7 8 9 0 {bksp}", "{tab} ض ص ث ق ف غ ع ه خ ح ج د", "ش س ي ب ل ا ت ن م ك ط", "ئ ء ؤ ر لا ى ة و ز ظ", ".com @ {space} {enter}"],

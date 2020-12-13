@@ -16,8 +16,8 @@ export class UserwelcomepageComponent implements OnInit {
   guestButtonStyle: string;
   constructor(private router: Router, private sharedData: SharedService  ,private CustomerService: CustomerService) { }
   guestButtonPath = 'guest.png';
-  existingCustomerButtonPath = 'existing.png';
-  newCustomerButtonPath = 'new.png';
+  existingCustomerButtonPath = 'ExistingCustomerEN.png';
+  newCustomerButtonPath = 'NewCustomerEN.png';
   display: boolean = false;
   adminPassword: any;
   adminPass;
@@ -25,7 +25,7 @@ export class UserwelcomepageComponent implements OnInit {
   dialogInputPlaceholder: string;
   dialogSubmitButton: any;
   logoutbtnPath = 'logout.png';
-  submitImage = 'apply.png';
+  submitImage = 'ApplyEn.png';
   keyboard_pwd: Keyboard
   root: any;
   english = {
@@ -68,8 +68,8 @@ export class UserwelcomepageComponent implements OnInit {
     if (this.lang === 'ar') {
       console.log(this.lang);
       this.guestButtonPath = 'guest-ar.png';
-      this.newCustomerButtonPath = 'new-ar.png';
-      this.existingCustomerButtonPath = 'existing-ar.png';
+      this.newCustomerButtonPath = 'NewCustomerAR.png';
+      this.existingCustomerButtonPath = 'ExistingCustomerAR.png';
       this.guestButtonStyle = 'ArabicGuestButton';
       this.DialogHeaderByLang = 'الرقم السري';
       this.dialogInputPlaceholder = 'الرقم السري';
@@ -78,15 +78,15 @@ export class UserwelcomepageComponent implements OnInit {
     }
     else if (this.lang === 'en')
     {
-      this.guestButtonPath = 'guest-en.png';
-      this.newCustomerButtonPath = 'new-en.png';
-      this.existingCustomerButtonPath = 'existing-en.png';
+      this.guestButtonPath = 'guest.png';
+      this.newCustomerButtonPath = 'NewCustomerEN.png';
+      this.existingCustomerButtonPath = 'ExistingCustomerEN.png';
       this.guestButtonStyle = 'EnglishGuestButton';
       this.DialogHeaderByLang = 'Enter Your Password';
       this.dialogInputPlaceholder = "Enter Your Password";
       this.dialogSubmitButton = "Submit";
       this.logoutbtnPath = 'logout.png';
-      this.submitImage = 'apply.png';
+      this.submitImage = 'ApplyEn.png';
       console.log(this.lang);
     }
 
@@ -114,11 +114,12 @@ export class UserwelcomepageComponent implements OnInit {
     if (page == "Guest") {
       (async () => {
         if (this.lang == 'en') {
-          this.guestButtonPath = 'guestclicked-en.png';
+          this.guestButtonPath = 'GuestClicked.png';
         }
         else {
-          this.guestButtonPath = 'guestclicked-ar.png'
+          this.guestButtonPath = 'GuestClickedAR.png'
         }
+        this.router.navigateByUrl("Selection");
         //await this.delay(100);
 
         this.CustomerService.GuestLogin().subscribe(response => {
@@ -145,10 +146,10 @@ export class UserwelcomepageComponent implements OnInit {
      
       (async () => {
         if (this.lang == 'en') {
-          this.existingCustomerButtonPath = 'existingclicked-en.png';
+          this.existingCustomerButtonPath = 'ExistingCustomerClickedEN.png';
         }
         else {
-          this.existingCustomerButtonPath = 'existingclicked-ar.png';
+          this.existingCustomerButtonPath = 'ExistingCustomerClickedAR.png';
         }
         await this.delay(100);
      
@@ -159,10 +160,10 @@ export class UserwelcomepageComponent implements OnInit {
     else if (page == "NewCustomer") {
       (async () => {
         if (this.lang == 'en') {
-          this.newCustomerButtonPath = 'newclicked-en.png';
+          this.newCustomerButtonPath = 'NewCustomerClickedEN.png';
         }
         else {
-          this.newCustomerButtonPath = 'newclicked-ar.png'
+          this.newCustomerButtonPath = 'NewCustomerClickedAR.png'
         }
         await this.delay(100);
         this.router.navigateByUrl("Login/NewCustomer");
@@ -177,9 +178,9 @@ export class UserwelcomepageComponent implements OnInit {
 
     //this.sharedData.setNavigatingLanguage('en');
     this.lang = 'en';
-    this.guestButtonPath = 'guest-en.png';
-    this.existingCustomerButtonPath = 'existing-en.png';
-    this.newCustomerButtonPath = 'new-en.png';
+    this.guestButtonPath = 'guest.png';
+    this.existingCustomerButtonPath = 'ExistingCustomerEN.png';
+    this.newCustomerButtonPath = 'NewCustomerEN.png';
     this.guestButtonStyle = 'EnglishGuestButton';
    }
   translateToArabic()
@@ -189,8 +190,8 @@ export class UserwelcomepageComponent implements OnInit {
     //this.sharedData.setNavigatingLanguage('ar'); 
     this.lang = 'ar';
     this.guestButtonPath = 'guest-ar.png';
-    this.existingCustomerButtonPath = 'existing-ar.png';
-    this.newCustomerButtonPath = 'new-ar.png';
+    this.existingCustomerButtonPath = 'ExistingCustomerAR.png';
+    this.newCustomerButtonPath = 'NewCustomerAR.png';
     this.guestButtonStyle = 'ArabicGuestButton';
   }
   logout() {

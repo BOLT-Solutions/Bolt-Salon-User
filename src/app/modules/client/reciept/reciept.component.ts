@@ -9,6 +9,7 @@ import { Customer } from '../../../models/Customer';
 import { PromoCodeService } from '../../../services/PromoCodeService';
 import Keyboard from "simple-keyboard";
 import englishlayout from "simple-keyboard-layouts/build/layouts/english";
+import { Console } from 'console';
 @Component({
   selector: 'app-reciept',
   templateUrl: './reciept.component.html',
@@ -60,7 +61,7 @@ export class RecieptComponent implements OnInit {
   IsBarberBusy: boolean;
   guestmsg: any;
   barberStatus: string;
-  applyBtn = 'apply.png';
+  applyBtn = 'ApplyEn.png';
   ConfirmationDiv: boolean = false;
   recieptDiv: boolean = true;
   keyboard_promo: Keyboard;
@@ -112,7 +113,7 @@ export class RecieptComponent implements OnInit {
       this.txtstyle = "txtstyle-ar"
       this.warnmsg = "يرجى ملاحظة أنه إذا تأخرت أكثر من 10 دقيقة بعد وقت الانتظار ، فسيتم إلغاء طلبك تلقائيًا";
       this.guestmsg = "يرجى ترك رقم هاتفك عند مكتب الكاشير للاتصال بك عندما يحين دورك*";
-      this.applyBtn = "ta2ked.png";
+      this.applyBtn = "ApplyAR.png";
     }
     else if (this.lang === 'en') {
       this.hours="hrs"
@@ -136,7 +137,7 @@ export class RecieptComponent implements OnInit {
       this.txtstyle = "txtstyle"
       this.warnmsg = "Kindly be available at the shop 10 minutes before the time of your order or your order will be cancelled ."
       this.guestmsg = "*Kindly leave your phone number at the front desk incase we need to contact you  ."
-      this.applyBtn = "apply.png";
+      this.applyBtn = "ApplyEn.png";
       this.confirmbtnpath = "confirm.png";
     }
 
@@ -149,7 +150,7 @@ export class RecieptComponent implements OnInit {
     this.barberQueueId = Number(localStorage.getItem('BarberQueueId'))
 
     this.customerId = JSON.parse(localStorage.getItem("CustomerId"))
-
+    console.log("customer id ", this.customerId.toString());
     this.orderServices = JSON.parse(localStorage.getItem("OrderServices"))
 
     for (let i = 0; i < this.orderServices.length; i++) {
@@ -249,10 +250,10 @@ export class RecieptComponent implements OnInit {
       localStorage.removeItem('BarberId');
 
       if (this.lang == 'ar') {
-        this.confirmbtnpath = "confirm-clicked-ar.png";
+        this.confirmbtnpath = "confirm-ar-clicked.png";
       }
       else if (this.lang == 'en') {
-        this.confirmbtnpath = "confirm.png";
+        this.confirmbtnpath = "confirm-clicked.png";
       }
 
       this.router.navigate(["../../Welcome/userWelcomePage"]);

@@ -1,5 +1,5 @@
 .background {
-  background: url("/assets/images/loginstart.jpg") no-repeat 0 0;
+  background: url("/assets/background/NewCustomerBackground.jpg") no-repeat 0 0;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -12,6 +12,10 @@
   justify-content: center;
   align-content: center;
   flex-direction: column;
+}
+#logoShrink
+{
+    margin-bottom:120px;
 }
 .arrow-prev {
   width: 100px;
@@ -171,7 +175,8 @@ img{
   position: absolute !important;
   -webkit-animation: logoSlide 1s forwards;
   animation: logoSlide 1s forwards;
-  left: 364.8px;
+  right: 5px;
+  width: 107%;
   transition: all ease-in-out;
 }
 
